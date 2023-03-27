@@ -3,15 +3,13 @@ name: Reusable workflow example
 on:
   workflow_call:
     inputs:
-       aws-region:
+       aws-region-d:
         required: true
         type: string
     secrets:
         aws-access-key-id-d:
          required: true
         aws-secret-access-key-d:
-          required: true
-        aws-region-d:
           required: true
 jobs:
   triage:
