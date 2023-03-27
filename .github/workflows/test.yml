@@ -23,4 +23,4 @@ jobs:
          aws-region: ${{ inputs.aws-region-d }}
     - name: test aws
       id: deploy
-      run: aws ls s3
+      run: aws s3 ls
