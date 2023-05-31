@@ -2,8 +2,5 @@ name: Usando compartilhado
 on:
   workflow_dispatch:
 jobs:
-   triage:
-     runs-on: ubuntu-latest
-     steps:
-     - name: set credentials aws
-       uses: joaov-barbosa/sharing-workflow-demo/.github/workflows/sharing/test.yml@mig
+  test:
+   uses: joaov-barbosa/sharing-workflow-demo/.github/workflows/sharing/test.yml@mig
