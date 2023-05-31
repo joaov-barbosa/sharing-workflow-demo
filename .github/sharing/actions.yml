@@ -1,0 +1,9 @@
+name: test2
+on:
+   workflow_call:
+jobs:
+    test:
+     runs-on: ubuntu-latest
+     steps:
+     - name: Checkout
+       run: echo "estou no arquivo test3.yml"
