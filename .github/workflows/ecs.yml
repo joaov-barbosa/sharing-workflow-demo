@@ -1,0 +1,39 @@
+name: Reusable workflow example
+
+on:
+  workflow_call:
+    inputs:
+       name-account:
+        required: true
+        type: string
+       envi:
+         required: true
+         type: string
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+    - name: print
+      run: |
+          if [[ ${{ inputs.name-account }} == dexco_test ]] && [[ ${{inputs.name-account}} == master ]]
+          then
+           env=prd
+           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID_DEXCO_TEST_PRD }} --profile default
+           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY_PRD }} --profile default
+           aws configure set region ${{ secrets.AWS_DEFAULT_REGION }} --profile defaul
+          elif [[ $BRANCH != stg ]] && [[ $BRANCH != master ]]
+          then
+           env=dev
+           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID_DEV }} --profile default
+           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }} --profile default
+           aws configure set region ${{ secrets.AWS_DEFAULT_REGION }} --profile default
+          fi
+          echo $BRANCH
+    
+    - name: set credentials aws
+      uses: aws-actions/configure-aws-credentials@13d241b293754004c80624b5567555c4a39ffbe3
+      with:
+         aws-access-key-id: ${{ secrets.aws-access-key-id-d }}
+         aws-secret-access-key: ${{ secrets.aws-secret-access-key-d }}
+         aws-region: ${{ inputs.aws-region-d }}
+    
