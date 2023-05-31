@@ -3,4 +3,4 @@ on:
   workflow_dispatch:
 jobs:
   test:
-   uses: ./.github/workflows/actions.yml
+   uses: ./.github/sharing/actions.yml
