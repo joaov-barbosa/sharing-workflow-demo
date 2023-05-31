@@ -1,26 +1,9 @@
 name: Reusable workflow example
-
 on:
-  workflow_call:
-    inputs:
-       aws-region-d:
-        required: true
-        type: string
-    secrets:
-        aws-access-key-id-d:
-         required: true
-        aws-secret-access-key-d:
-          required: true
+  workflow_dispatch:
 jobs:
-  triage:
-    runs-on: ubuntu-latest
-    steps:
-    - name: set credentials aws
-      uses: aws-actions/configure-aws-credentials@13d241b293754004c80624b5567555c4a39ffbe3
-      with:
-         aws-access-key-id: ${{ secrets.aws-access-key-id-d }}
-         aws-secret-access-key: ${{ secrets.aws-secret-access-key-d }}
-         aws-region: ${{ inputs.aws-region-d }}
-    - name: test aws
-      id: deploy
-      run: aws s3 ls
+   triage:
+     runs-on: ubuntu-latest
+     steps:
+     - name: set credentials aws
+       uses: joaov-barbosa/sharing-workflow-demo/.github/workflows/sharing/test.yml@mig
