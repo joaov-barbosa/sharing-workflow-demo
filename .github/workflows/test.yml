@@ -9,4 +9,4 @@ jobs:
    - name: test caminho
      run: ls -lha
    - name: test workflow
-     uses: ./.github/workflows/deploy/test2.yml
+     uses: ./.github/actions/teste
