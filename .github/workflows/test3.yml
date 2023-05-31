@@ -1,6 +1,6 @@
-name: industrial-manutencao-backoffice
+name: test2
 on:
-   workflow_dispatch:
+   workflow_call:
 jobs:
     test:
      runs-on: ubuntu-latest
