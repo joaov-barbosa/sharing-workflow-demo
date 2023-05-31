@@ -1,9 +1,0 @@
-name: 'Hello World'
-description: 'Greet someone'
-jobs:
- runs-on: ubuntu-latest
-  #using: "composite"
- teste:
-  steps:
-    - run: echo "Estou no arquivo action.yml"
-      shell: bash
