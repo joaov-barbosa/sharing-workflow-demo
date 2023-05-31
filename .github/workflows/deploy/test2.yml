@@ -6,5 +6,6 @@ jobs:
   triage:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - name: set credentials aws
       run: echo "estou no arquivo test2.yml"
