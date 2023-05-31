@@ -4,5 +4,7 @@ jobs:
   test:
    runs-on: ubuntu-latest
    steps:
+   - uses: actions/checkout@v3
+   
    - name: test workflow
      uses: ./.github/actions/deploy/test2.yml
