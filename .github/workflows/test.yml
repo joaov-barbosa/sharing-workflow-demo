@@ -1,6 +1,8 @@
 name: Usando compartilhado
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 jobs:
   test:
-   uses: ./.github/actions/deploy
+   runs-on: ubuntu-latest
+   steps:
+   - name: test workflow
+     uses: ./.github/actions/deploy/test2.yml
