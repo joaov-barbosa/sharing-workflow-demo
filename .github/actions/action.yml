@@ -1,0 +1,7 @@
+name: 'Hello World'
+description: 'Greet someone'
+runs:
+  using: "composite"
+  steps:
+    - run: echo "Estou no arquivo action.yml"
+      shell: bash

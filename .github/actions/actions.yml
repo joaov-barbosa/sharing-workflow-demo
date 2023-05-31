@@ -1,7 +1,0 @@
-name: test2
-runs:
-    using: 'composite'
-    steps:
-     - name: Checkout
-       run: echo "estou no arquivo test3.yml"
-       shell: bash
