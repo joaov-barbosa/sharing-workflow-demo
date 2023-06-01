@@ -3,6 +3,7 @@ description: 'Greet someone'
 inputs:
    aws-region:
      required: true
+secrets:
    aws_access_key:
      required: true
    aws_secret_key:
@@ -17,8 +18,8 @@ runs:
      - name: set credentials aws
        uses: aws-actions/configure-aws-credentials@13d241b293754004c80624b5567555c4a39ffbe3
        with:
-          aws-access-key-id:  ${{ inputs.aws_access_key}}
-          aws-secret-access-key: ${{ inputs.aws_secret_key }}
+          aws-access-key-id:  ${{ secrets.aws_access_key}}
+          aws-secret-access-key: ${{ secrets.aws_secret_key }}
           aws-region: ${{ inputs.aws-region }}
      - name: bucket
        run: aws s3 ls
