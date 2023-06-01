@@ -8,5 +8,5 @@ jobs:
 
    - name: test caminho
      run: ls -lha
-   - name: test workflow
-     uses: ./.github/actions/teste
+   - uses: ./.github/actions/teste
+   - uses: ./.github/actions/teste2
