@@ -21,9 +21,13 @@ runs:
           aws-secret-access-key: ${{ inputs.aws_secret_key }}
           aws-region: ${{ inputs.aws-region }}
      - name: bucket
+       run:  aws s3api create-bucket --bucket test-bucket-9892829808-composite-cli  --region us-east-1
+       shell: bash
+     
+     - name: bucket ls
        run: aws s3 ls
        shell: bash
-    
+     
      - name: test
        run: echo "estou no diretorio teste"
        shell: bash
